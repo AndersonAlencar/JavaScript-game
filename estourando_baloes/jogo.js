@@ -47,11 +47,12 @@ function timer(seconds){
 		return false;
 	}
 
-	document.getElementById('cronometro').innerHTML = seconds;
+	document.getElementById('stopwatch').innerHTML = seconds;
 	timer_id = setTimeout("timer("+seconds+")",1000);
 }
 
 function gameOver(){
+	removeEventsBalloons();
 	alert('Fim de Jogo, Você não conseguiu estourar todos os balões a tempo');
 }
 
@@ -71,6 +72,8 @@ function creatBalloons(qtde_baloes){
 
 function burst(e){
 	var id_balloon = e.id;
+
+	document.getElementById(id_balloon).setAttribute("onclick","");
 
 	document.getElementById(id_balloon).src = 'imagens/balao_azul_pequeno_estourado.png';  
 	punctuation(-1);
@@ -104,4 +107,16 @@ function game_context(whole_balloons, burst_balloons){
 
 function stop_game(){
 	clearTimeout(timer_id);
+}
+
+
+function removeEventsBalloons() {
+    var i = 1; 
+    
+    
+    while(document.getElementById('b'+i)) {
+        
+        document.getElementById('b'+i).onclick = '';
+        i++;
+    }
 }

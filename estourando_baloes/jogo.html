@@ -5,36 +5,40 @@
 
 		<title>Estourando balões</title>
 
+		<script src="jogo.js"></script>
+
 	</head>
 
-	<body>
+	<body onload="startGame()">
 
 		<div style=" float: left; width: auto; height: 500px; background: #FFF; border: 1px solid #A2A2A2;">
 			
 
-			<table border="1">
+			<table >
 				<tr>
 					<td> <img src="imagens/balao_azul_grande.png"/></td>
-					<td>10</td>
+					<td><span id="whole_balloons"  style="font-size: 40px;"></span></td>
 
 				</tr>
 
 			</table>
 
 			<br/>
-			<table border="1">
+			<table >
 				<tr>
 					<td> <img src="imagens/balao_azul_grande_estourado.png"/></td>
-					<td>10</td>
+					<td> <span id="burst_balloons" style="font-size: 40px;"></span></td>
 
 				</tr>
 
 			</table>
 
 			<br/>
-			<table border="1" style="width: 140px;height: 132px;">
+			<table style="width: 140px;height: 132px;">
 				<tr>
-					<td style="background: url('imagens/cronometro.png');"></td>
+					<td style="background: url('imagens/cronometro.png'); text-align: center; ">
+						<span id="stopwatch" style="color: red; font-size: 30px"></span>
+					</td>
 
 				</tr>
 
@@ -44,7 +48,7 @@
 
 		</div>
 
-		<div style="float: left; width: 600px; height: 500px; background: url('imagens/cenario.png');">
+		<div id="cenario" style="float: left; width: 600px; height: 500px; background: url('imagens/cenario.png'); background-position: bottom;">
 			 
 		</div>
 
